@@ -1,0 +1,25 @@
+.title {
+    font-size: 24px;
+  }
+  
+  .item {
+    cursor: pointer;
+  }
+  
+  .item-text {
+    font-size: 18px;
+  }
+  
+  /* add-item.component.scss */
+  ion-input {
+    margin-bottom: 16px;
+  }
+  
+  /* item-detail.component.scss */
+  ion-card {
+    margin: 16px;
+  }
+  
+  ion-card-content {
+    font-size: 18px;
+  }

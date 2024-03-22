@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { HomePage } from './home/home.page';
+import { AddItemComponent } from './add-item/add-item.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    component: HomePage
+  },
+  {
+    path: 'add-item',
+    component: AddItemComponent
+  },
+  {
+    path: 'item-detail/:title/:description',
+    component: ItemDetailComponent
   },
   {
     path: '',
@@ -14,9 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
