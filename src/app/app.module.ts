@@ -8,19 +8,21 @@ import { AddItemComponent } from './add-item/add-item.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { HomePage } from './home/home.page';
 import { FormsModule } from '@angular/forms';
+import { EditItemComponent } from './edit-item/edit-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePage,
     AddItemComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    EditItemComponent,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

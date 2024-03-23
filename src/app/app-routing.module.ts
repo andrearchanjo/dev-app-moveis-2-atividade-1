@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomePage } from './home/home.page';
 import { AddItemComponent } from './add-item/add-item.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { EditItemComponent } from './edit-item/edit-item.component';
 
 const routes: Routes = [
   {
@@ -14,8 +15,12 @@ const routes: Routes = [
     component: AddItemComponent
   },
   {
-    path: 'item-detail/:title/:description',
+    path: 'item-detail/:id',
     component: ItemDetailComponent
+  },
+  {
+    path: 'edit-item/:id',
+    component: EditItemComponent
   },
   {
     path: '',

@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.loadItems();
-    this.todoService.newItemAdded.subscribe((item: TodoItem) => {
+    this.todoService.listItensChanged.subscribe((item: TodoItem) => {
       this.loadItems();
       this.lastAddedItem = item;
     });
@@ -34,12 +34,16 @@ export class HomePage implements OnInit {
     this.router.navigate(['/add-item']);
   }
 
-  viewItem(item: TodoItem) {
-    this.router.navigate(['/item-detail', item.title, item.description]);
+  viewItem(id: number) {
+    this.router.navigate(['/item-detail', id]);
   }
 
-  removeItem(index: number) {
-    this.todoService.removeItem(index);
+  removeItem(id: number) {
+    this.todoService.removeItem(id);
     this.loadItems();
+  }
+
+  editItem(id: number) {
+    this.router.navigate(['/edit-item', id]);
   }
 }

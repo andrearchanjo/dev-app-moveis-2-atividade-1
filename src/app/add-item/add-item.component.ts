@@ -37,8 +37,8 @@ export class AddItemComponent implements OnInit {
       return;
     }
 
-    const newItem: TodoItem = { title: this.title, description: this.description };
+    const newItem: TodoItem = { id: 0, title: this.title, description: this.description };
     this.todoService.addItem(newItem);
-    this.router.navigate(['/']);
+    this.close();
   }
 }
