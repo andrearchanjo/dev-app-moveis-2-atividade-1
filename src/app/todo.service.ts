@@ -8,6 +8,7 @@ export class TodoService {
 
   private localStorageKey = 'todoItems';
   newItemAdded = new EventEmitter<void>();
+
   constructor() { }
 
   getItems(): TodoItem[] {
@@ -20,5 +21,11 @@ export class TodoService {
     storedItems.push(item);
     localStorage.setItem(this.localStorageKey, JSON.stringify(storedItems));
     this.newItemAdded.emit();
+  }
+
+  removeItem(index: number): void {
+    const storedItems = this.getItems();
+    storedItems.splice(index, 1);
+    localStorage.setItem(this.localStorageKey, JSON.stringify(storedItems));
   }
 }

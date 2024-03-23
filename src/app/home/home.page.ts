@@ -37,4 +37,9 @@ export class HomePage implements OnInit {
   viewItem(item: TodoItem) {
     this.router.navigate(['/item-detail', item.title, item.description]);
   }
+
+  removeItem(index: number) {
+    this.todoService.removeItem(index);
+    this.loadItems();
+  }
 }
