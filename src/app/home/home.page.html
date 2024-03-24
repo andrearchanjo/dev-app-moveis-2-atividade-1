@@ -15,8 +15,8 @@
   <ion-list lines="full">
     <ion-item *ngFor="let item of items" (click)="viewItem(item.id)" class="item">
       <ion-label class="item-text">{{ item.title }}</ion-label>
-      <ion-icon name="pencil-outline" slot="end" (click)="editItem(item.id); $event.stopPropagation()"></ion-icon>
-      <ion-icon name="trash-outline" slot="end" (click)="removeItem(item.id)"></ion-icon>
+      <ion-icon name="pencil-outline" color="white" slot="end" (click)="editItem(item.id); $event.stopPropagation()"></ion-icon>
+      <ion-icon name="trash-outline" color="white" slot="end" (click)="removeItem(item.id)"></ion-icon>
     </ion-item>
   </ion-list>  
 </ion-content>

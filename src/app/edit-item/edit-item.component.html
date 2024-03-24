@@ -12,12 +12,12 @@
 <ion-content class="ion-padding">
   <ion-list lines="full">
     <ion-item>
-      <ion-label position="floating">Title</ion-label>
-      <ion-input type="text" [(ngModel)]="title"></ion-input>
+      <ion-label position="floating" [innerHTML]="'Title'"></ion-label>
+      <ion-input type="text" [(ngModel)]="title" aria-label="Title"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Description</ion-label>
-      <ion-input type="text" [(ngModel)]="description"></ion-input>
+      <ion-label position="floating" [innerHTML]="'Description'"></ion-label>
+      <ion-input type="text" [(ngModel)]="description" aria-label="Description"></ion-input>
     </ion-item>
   </ion-list>
 
